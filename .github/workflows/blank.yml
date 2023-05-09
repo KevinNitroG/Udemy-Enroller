@@ -15,7 +15,7 @@ permissions: write-all
 
 jobs:
   Run:
-    timeout-minutes: 30
+    timeout-minutes: 7
     runs-on: windows-2019
     steps:
       - uses: actions/checkout@v3
@@ -25,8 +25,9 @@ jobs:
           Start-BitsTransfer -Source https://github.com/techtanic/Discounted-Udemy-Course-Enroller/releases/latest/download/DUCE-CLI-windows.exe -Destination .\DUCE-CLI-windows.exe
       - name: Run  
         shell: cmd
+        timeout-minutes: 5
+        continue-on-error: true
         run: |
-          cd
           DUCE-CLI-windows.exe
 
   Delete_old_workflows:
