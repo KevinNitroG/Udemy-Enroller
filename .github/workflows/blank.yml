@@ -15,6 +15,7 @@ permissions: write-all
 
 jobs:
   Run:
+    timeout-minutes: 30
     runs-on: windows-2019
     steps:
       - uses: actions/checkout@v3
