@@ -18,14 +18,13 @@ jobs:
     timeout-minutes: 7
     runs-on: windows-2019
     steps:
-#      - uses: actions/checkout@v3
+      - uses: actions/checkout@v3
       - name: Download files
         run: |
           Start-BitsTransfer -Source ${{ secrets.CONFIG }} -Destination .\duce-cli-settings.json
           Start-BitsTransfer -Source https://github.com/techtanic/Discounted-Udemy-Course-Enroller/releases/latest/download/DUCE-CLI-windows.exe -Destination .\DUCE-CLI-windows.exe
       - name: Run  
         shell: cmd
-        timeout-minutes: 5
         continue-on-error: true
         run: |
           DUCE-CLI-windows.exe
