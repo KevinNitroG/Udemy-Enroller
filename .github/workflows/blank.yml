@@ -24,6 +24,9 @@ jobs:
         run: |
           DUCE-CLI-windows.exe
 
+  Delete_old_workflows:
+    runs-on: ubuntu-latest
+    steps:    
       - name: Delete old workflow runs
         # You may pin to the exact commit or the version.
         # uses: MajorScruffy/delete-old-workflow-runs@78b5af714fefaefdf74862181c467b061782719e
