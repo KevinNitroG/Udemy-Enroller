@@ -18,7 +18,7 @@ jobs:
     timeout-minutes: 7
     runs-on: windows-2019
     steps:
-#      - uses: actions/checkout@v3
+      - uses: actions/checkout@v3
       - name: Download files
         run: |
           Start-BitsTransfer -Source ${{ secrets.CONFIG }} -Destination .\duce-cli-settings.json
