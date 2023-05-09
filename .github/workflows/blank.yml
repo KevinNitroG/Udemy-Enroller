@@ -11,9 +11,11 @@ jobs:
     runs-on: windows-2019
     steps:
       - uses: actions/checkout@v3
-      - name: Run
+      - name: Download files
         run: |
           curl -O ${{ secrets.CONFIG }}
-          curl -O https://github.com/techtanic/Discounted-Udemy-Course-Enroller/releases/latest/download/DUCE-GUI-windows.exe
+          curl -O https://github.com/techtanic/Discounted-Udemy-Course-Enroller/releases/latest/download/DUCE-CLI-windows.exe
+      - name: Run  
+        run: |
           DUCE-CLI-windows.exe
           
