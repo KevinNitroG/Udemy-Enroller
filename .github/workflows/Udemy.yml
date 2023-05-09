@@ -6,7 +6,7 @@ on:
 #    branches: [ "main" ]
   workflow_dispatch:
   schedule:
-    - cron: '0 */72 * * *'
+    - cron: '0 */24 * * *'
 
 env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -15,7 +15,7 @@ permissions: write-all
 
 jobs:
   Run:
-    timeout-minutes: 10
+    timeout-minutes: 5
     runs-on: windows-2019
     steps:
       - uses: actions/checkout@v3
