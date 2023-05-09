@@ -20,8 +20,8 @@ jobs:
       - uses: actions/checkout@v3
       - name: Download files
         run: |
-          Start-BitsTransfer -Source ${{ secrets.CONFIG }} -Destination ./duce-cli-settings.json
-          Start-BitsTransfer -Source https://github.com/techtanic/Discounted-Udemy-Course-Enroller/releases/latest/download/DUCE-CLI-windows.exe -Destination ./DUCE-CLI-windows.exe
+          Start-BitsTransfer -Source ${{ secrets.CONFIG }} -Destination .\duce-cli-settings.json
+          Start-BitsTransfer -Source https://github.com/techtanic/Discounted-Udemy-Course-Enroller/releases/latest/download/DUCE-CLI-windows.exe -Destination .\DUCE-CLI-windows.exe
       - name: Run  
         run: |
           cd
@@ -36,3 +36,4 @@ jobs:
         uses: MajorScruffy/delete-old-workflow-runs@v0.3.0
         with:
           older-than-seconds: 604800
+          repository: ${{ github.repository }}
