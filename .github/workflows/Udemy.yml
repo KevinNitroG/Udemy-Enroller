@@ -25,7 +25,7 @@ jobs:
           Start-BitsTransfer -Source https://github.com/techtanic/Discounted-Udemy-Course-Enroller/releases/latest/download/DUCE-CLI-windows.exe -Destination .\DUCE-CLI-windows.exe
       - name: Run  
         shell: cmd
-        timeout-minutes: 10
+        timeout-minutes: 20
         continue-on-error: true
         run: |
           DUCE-CLI-windows.exe
