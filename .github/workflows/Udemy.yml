@@ -28,7 +28,7 @@ jobs:
       - name: Download requirements and install requirements
         run: |
           Start-BitsTransfer -Source https://raw.githubusercontent.com/techtanic/Discounted-Udemy-Course-Enroller/master/requirements.txt -Destination .\requirements.txt
-          pip install requirements.txt
+          pip -r install requirements.txt
 
       - name: Download files
         run: |
