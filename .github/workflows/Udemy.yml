@@ -22,7 +22,7 @@ jobs:
       
       - name: Setup Python
         uses: actions/setup-python@main
-        with: |
+        with:
           cache: pip
       
       - name: Download requirements and install requirements
