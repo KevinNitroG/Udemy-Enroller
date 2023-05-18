@@ -1,4 +1,4 @@
-name: Udemy Enroller
+name: AUCE
 on:
 #  push:
 #    branches: [ "main" ]
@@ -27,8 +27,9 @@ jobs:
           cache: pip
       
       - name: Clone repo
-        run: git clone --depth 1 https://github.com/samin-irtiza/Automatic-Udemy-Course-Enroller-GET-PAID-UDEMY-COURSES-for-FREE
-      
+        run: |
+          git clone --depth 1 https://github.com/samin-irtiza/Automatic-Udemy-Course-Enroller-GET-PAID-UDEMY-COURSES-for-FREE .
+
       - name: Install requirements and Udemy
         run: |
           pip install -r requirements.txt
