@@ -1,12 +1,12 @@
-name: Udemy Enroller
+name: DUCE
 on:
 #  push:
 #    branches: [ "main" ]
 #  pull_request:
 #    branches: [ "main" ]
   workflow_dispatch:
-  schedule:
-    - cron: '5 0 * * */4'
+#  schedule:
+#    - cron: '5 0 * * */4'
 
 env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
