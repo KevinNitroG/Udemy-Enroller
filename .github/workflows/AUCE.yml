@@ -55,10 +55,16 @@ jobs:
 #        run: |
 #          chmod +x /home/runner/.udemy_enroller/*
 
+      - name: List current dir
+        run: | 
+          ls -a
+          echo ------------
+          tree
+
       - name: Enroll time
         timeout-minutes: 30
         continue-on-error: true
-        run: sudo python udemy_enroller
+        run: sudo python3 udemy_enroller
 
   Delete_old_workflows:
     runs-on: ubuntu-latest
