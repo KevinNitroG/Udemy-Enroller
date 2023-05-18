@@ -51,9 +51,10 @@ jobs:
       - name: Setup Chrome
         uses: nanasess/setup-chromedriver@v2
 
-#      - name: Assign permissions
-#        run: |
-#          chmod +x /home/runner/.udemy_enroller/*
+      - name: Assign permissions
+        run: |
+          chmod +x /home/runner/.udemy_enroller/*
+          chmod +x ./*
 
       - name: List current dir
         run: | 
