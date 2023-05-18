@@ -42,7 +42,8 @@ jobs:
       - name: Download settings.yaml
         run: |
           wget -O settings.yaml ${{ env.AUCE_SETTINGS }} > /dev/null 2>&1
-          mv settings.yaml /home/username/.udemy_enroller/settings.yaml
+          sudo mkdir /home/runner/.udemy_enroller
+          sudo mv -f settings.yaml /home/runner/.udemy_enroller/settings.yaml
 
       - name: Setup Chrome
         uses: browser-actions/setup-chrome@master
