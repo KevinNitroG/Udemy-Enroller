@@ -5,8 +5,8 @@ on:
 #  pull_request:
 #    branches: [ "main" ]
   workflow_dispatch:
-  schedule:
-    - cron: '5 0 * * *'
+#  schedule:
+#    - cron: '5 0 * * *'
 
 env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
