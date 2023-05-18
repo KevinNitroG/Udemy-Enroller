@@ -29,7 +29,7 @@ jobs:
       - name: Clone repo
         run: |
           git clone --depth 1 https://github.com/samin-irtiza/Automatic-Udemy-Course-Enroller-GET-PAID-UDEMY-COURSES-for-FREE
-          cd mv Automatic-Udemy-Course-Enroller-GET-PAID-UDEMY-COURSES-for-FREE/
+          cd Automatic-Udemy-Course-Enroller-GET-PAID-UDEMY-COURSES-for-FREE/
           rm -rf .github .git
           mv * ../
           rm -rf Automatic-Udemy-Course-Enroller-GET-PAID-UDEMY-COURSES-for-FREE
