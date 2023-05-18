@@ -51,6 +51,10 @@ jobs:
       - name: Setup Chrome
         uses: nanasess/setup-chromedriver@v2
 
+      - name: Assign permissions
+        run: |
+          chmod +x /home/runner/.udemy_enroller/*
+
       - name: Enroll time
         timeout-minutes: 30
         continue-on-error: true
