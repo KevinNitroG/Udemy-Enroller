@@ -1,1 +1,46 @@
+name: Udemy Enroller
+on:
+#  push:
+#    branches: [ "main" ]
+#  pull_request:
+#    branches: [ "main" ]
+  workflow_dispatch:
+  schedule:
+    - cron: '5 0 * * *'
 
+env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+permissions: write-all
+
+jobs:
+  Run:
+#    timeout-minutes: 5
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Python
+        uses: actions/setup-python@main
+        with:
+          cache: pip
+      
+      - name: Clone repo
+        run: git clone --depth 0 https://github.com/samin-irtiza/Automatic-Udemy-Course-Enroller-GET-PAID-UDEMY-COURSES-for-FREE 
+      
+      - name: Install requirements
+        run: pip install -r requirements.txt
+
+      - name: Enroll time
+        timeout-minutes: 30
+        continue-on-error: true
+        run: |
+          DUCE-CLI-windows.exe
+  Delete_old_workflows:
+    runs-on: ubuntu-latest
+    steps:    
+      - name: Delete old workflow runs
+        uses: MajorScruffy/delete-old-workflow-runs@v0.3.0
+        with:
+          older-than-seconds: 604800
+          repository: ${{ github.repository }}
