@@ -51,14 +51,14 @@ jobs:
       - name: Setup Chrome
         uses: nanasess/setup-chromedriver@v2
 
-      - name: Assign permissions
-        run: |
-          chmod +x /home/runner/.udemy_enroller/*
+#      - name: Assign permissions
+#        run: |
+#          chmod +x /home/runner/.udemy_enroller/*
 
       - name: Enroll time
         timeout-minutes: 30
         continue-on-error: true
-        run: udemy_enroller --browser=chrome
+        run: sudo udemy_enroller --browser=chrome
 
   Delete_old_workflows:
     runs-on: ubuntu-latest
