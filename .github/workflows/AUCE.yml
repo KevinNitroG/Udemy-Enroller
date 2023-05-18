@@ -10,6 +10,7 @@ on:
 
 env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      AUCE_SETTINGS: ${{ secrets.AUCE_SETTINGS }}
       
 permissions: write-all
 
@@ -26,16 +27,26 @@ jobs:
           cache: pip
       
       - name: Clone repo
-        run: git clone --depth 0 https://github.com/samin-irtiza/Automatic-Udemy-Course-Enroller-GET-PAID-UDEMY-COURSES-for-FREE 
+        run: git clone --depth 1 https://github.com/samin-irtiza/Automatic-Udemy-Course-Enroller-GET-PAID-UDEMY-COURSES-for-FREE
       
-      - name: Install requirements
-        run: pip install -r requirements.txt
+      - name: Install requirements and Udemy
+        run: |
+          pip install -r requirements.txt
+          pip install udemy-enroller
+
+      - name: Download settings.yaml
+        run: |
+          wget -O settings.yaml ${{ env.AUCE_SETTINGS }} > /dev/null 2>&1
+          mv settings.yaml /home/username/.udemy_enroller/settings.yaml
+
+      - name: Setup Chrome
+        uses: browser-actions/setup-chrome@master
 
       - name: Enroll time
         timeout-minutes: 30
         continue-on-error: true
-        run: |
-          DUCE-CLI-windows.exe
+        run: udemy_enroller --browser=chrome
+
   Delete_old_workflows:
     runs-on: ubuntu-latest
     steps:    
