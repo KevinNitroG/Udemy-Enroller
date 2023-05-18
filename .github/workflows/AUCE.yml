@@ -65,7 +65,7 @@ jobs:
       - name: Enroll time
         timeout-minutes: 30
         continue-on-error: true
-        run: python run_enroller.py
+        run: sudo python run_enroller.py
 
   Delete_old_workflows:
     runs-on: ubuntu-latest
