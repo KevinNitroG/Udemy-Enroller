@@ -58,7 +58,7 @@ jobs:
       - name: Enroll time
         timeout-minutes: 30
         continue-on-error: true
-        run: udemy_enroller
+        run: sudo python udemy_enroller
 
   Delete_old_workflows:
     runs-on: ubuntu-latest
